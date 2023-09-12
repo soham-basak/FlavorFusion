@@ -29,7 +29,7 @@ model Product {
   img        String
   price      Decimal
   isFeatured Boolean  @default(false)
-  oprions    Json[]
+  options    Json[]
   category   Category @relation(fields: [catSlug], references: [slug])
   catSlug    String
 }
