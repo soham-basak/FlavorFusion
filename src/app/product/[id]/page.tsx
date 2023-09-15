@@ -1,9 +1,22 @@
+import { ProductType } from "@/Types/types";
 import Price from "@/components/Price";
-import { singleProduct } from "@/data";
 import Image from "next/image";
 import React from "react";
 
-const SingleProductPage = () => {
+const getData = async (id: string) => {
+  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+    cache: "no-cache",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed!");
+  }
+
+  return res.json();
+};
+
+const SingleProductPage = async ({ params }: { params: { id: string } }) => {
+  const singleProduct: ProductType = await getData(params.id);
   return (
     <div className="p-4 lg:px-20 xl:px-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center">
       {/* IMAGE CONTAINER */}
@@ -23,11 +36,7 @@ const SingleProductPage = () => {
           {singleProduct.title}
         </h1>
         <p>{singleProduct.desc}</p>
-        <Price
-          price={singleProduct.price}
-          id={singleProduct.id}
-          options={singleProduct.options}
-        />
+        <Price product={singleProduct} />
       </div>
     </div>
   );
