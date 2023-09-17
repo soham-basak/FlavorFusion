@@ -55,7 +55,7 @@ const CartPage = () => {
               </h1>
               <span>{item.optionTitle}</span>
             </div>
-            <h2 className="font-bold">${item.price}</h2>
+            <h2 className="font-bold">₹{item.price}</h2>
             <span
               className="cursor-pointer"
               onClick={() => removeFromCart(item)}
