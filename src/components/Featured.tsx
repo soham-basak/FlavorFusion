@@ -1,5 +1,6 @@
 import { ProductType } from "@/Types/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
@@ -17,7 +18,7 @@ const getData = async () => {
 const Featured = async () => {
   const featuredProducts: ProductType[] = await getData();
   return (
-    <div className=" w-screen overflow-x-scroll text-red-500 ">
+    <div className=" w-screen overflow-x-scroll text-red-500 mt-20">
       {/* WRAPPER */}
       <div className="w-max flex">
         {/* SINGLE ITEM */}
@@ -40,9 +41,12 @@ const Featured = async () => {
               </h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold ">₹{item.price}</span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
+              <Link
+                className="bg-red-500 text-white p-2 rounded-md"
+                href={`/product/${item.id}`}
+              >
                 Add to Cart
-              </button>
+              </Link>
             </div>
           </div>
         ))}

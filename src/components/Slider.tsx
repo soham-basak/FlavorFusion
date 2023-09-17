@@ -7,31 +7,34 @@ const data = [
   {
     id: 1,
     title: "always fresh & always crispy & always hot",
-    image: "/slide1.png",
+    image:
+      "https://res.cloudinary.com/sohambasak/image/upload/v1694950084/flavor-fusion/zbjgxevv2dbigy5zx4aq.jpg",
   },
   {
     id: 2,
     title: "we deliver your order wherever you are in NY",
-    image: "/slide2.png",
+    image:
+      "https://res.cloudinary.com/sohambasak/image/upload/v1694950084/flavor-fusion/rjvz0wcm81ltryyw4asg.jpg",
   },
   {
     id: 3,
     title: "the best pizza to share with your family",
-    image: "/slide3.jpg",
+    image:
+      "https://res.cloudinary.com/sohambasak/image/upload/v1694950085/flavor-fusion/mibihvgzcfug2vmtdfci.jpg",
   },
 ];
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(
-  //     () =>
-  //       setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1)),
-  //     5000
-  //   );
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(
+      () =>
+        setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1)),
+      5000
+    );
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] lg:flex-row bg-fuchsia-50">
