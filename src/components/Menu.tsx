@@ -15,7 +15,7 @@ const links = [
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(true);
+  const { status } = useSession();
   return (
     <div>
       {!open ? (
@@ -44,7 +44,7 @@ const Menu = () => {
               {item.title}
             </Link>
           ))}
-          {user ? (
+          {status === "authenticated" ? (
             <div className="flex flex-col justify-center items-center gap-8">
               <Link href="/orders" onClick={() => setOpen(false)}>
                 Orders
