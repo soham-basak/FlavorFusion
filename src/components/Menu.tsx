@@ -45,10 +45,13 @@ const Menu = () => {
             </Link>
           ))}
           {user ? (
-            <div>
+            <div className="flex flex-col justify-center items-center gap-8">
               <Link href="/orders" onClick={() => setOpen(false)}>
                 Orders
               </Link>
+              <span className="cursor-pointer" onClick={() => signOut()}>
+                Logout
+              </span>
             </div>
           ) : (
             <Link href="/login" onClick={() => setOpen(false)}>
