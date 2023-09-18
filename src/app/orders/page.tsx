@@ -18,7 +18,9 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch("http://localhost:3000/api/orders").then((res) => res.json()),
+      fetch("http://localhost:3000/api/orders", {
+        mode: "no-cors",
+      }).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
@@ -26,6 +28,7 @@ const OrdersPage = () => {
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
       return fetch(`http://localhost:3000/api/orders/${id}`, {
+        mode: "no-cors",
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

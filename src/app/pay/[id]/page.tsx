@@ -21,6 +21,7 @@ const PayPage = ({ params }: { params: { id: string } }) => {
           `http://localhost:3000/api/create-intent/${id}`,
           {
             method: "POST",
+            mode: "no-cors",
           }
         );
         const data = await res.json();

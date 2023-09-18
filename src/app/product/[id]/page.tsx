@@ -7,6 +7,7 @@ import { getAuthSession } from "@/utils/auth";
 
 const getData = async (id: string) => {
   const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+    mode: "no-cors",
     cache: "no-store",
   });
 

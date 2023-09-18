@@ -18,6 +18,7 @@ const DeleteButton = ({ id }: { id: any }) => {
 
   const handleDelete = async () => {
     const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+      mode: "no-cors",
       method: "DELETE",
     });
 
