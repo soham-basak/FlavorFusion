@@ -1,4 +1,5 @@
 import { ProductType } from "@/Types/types";
+import prisma from "@/utils/connect";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -16,13 +17,17 @@ const getData = async () => {
 };
 
 const Featured = async () => {
-  const featuredProducts: ProductType[] = await getData();
+  const products: any = await prisma.product.findMany({
+    where: {
+      isFeatured: true,
+    },
+  });
   return (
     <div className=" w-screen overflow-x-scroll text-red-500 mt-20">
       {/* WRAPPER */}
       <div className="w-max flex">
         {/* SINGLE ITEM */}
-        {featuredProducts.map((item) => (
+        {products.map((item: ProductType) => (
           <div
             key={item.id}
             className=" w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-100 transition-all duration-300 md:w-[50vh] xl:w-[33vw] xl:h-[90vh]"
