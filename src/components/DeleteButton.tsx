@@ -17,9 +17,12 @@ const DeleteButton = ({ id }: { id: any }) => {
   }
 
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:3000/api/products/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://flavor-fusion-dex.vercel.app/api/products/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     if (res.status === 200) {
       router.push("/menu");

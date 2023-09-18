@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch("https://flavor-fusion-dex.vercel.app/api/products", {
     cache: "no-store",
   });
 

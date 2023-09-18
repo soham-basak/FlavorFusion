@@ -18,7 +18,7 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch("http://localhost:3000/api/orders", {
+      fetch("https://flavor-fusion-dex.vercel.app/api/orders", {
         mode: "no-cors",
       }).then((res) => res.json()),
   });
@@ -27,7 +27,7 @@ const OrdersPage = () => {
 
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`, {
+      return fetch(`https://flavor-fusion-dex.vercel.app/api/orders/${id}`, {
         mode: "no-cors",
         method: "PUT",
         headers: {
