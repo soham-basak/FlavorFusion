@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const data = [
   {
@@ -43,7 +44,9 @@ const Slider = () => {
         <h1 className="text-4xl text-center uppercase p-4 md:p-10 md:text-6xl xl:text-7xl">
           {data[currentSlide].title}
         </h1>
-        <button className="bg-red-500 text-white py-4 px-8">Order Now</button>
+        <Link href="/menu">
+          <button className="bg-red-500 text-white py-4 px-8">Order Now</button>
+        </Link>
       </div>
       {/* IMAGE CONTAINER */}
       <div className="w-full h-1/2 relative lg:h-full lg:w-1/2">
