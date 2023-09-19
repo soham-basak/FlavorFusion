@@ -4,6 +4,10 @@
 
 Flavor Fusion is a full-stack web application built with Next.js, Prisma, PostgreSQL, Tailwind CSS, Stripe, React Query, Zustand, and NextAuth.js. It provides users with a seamless food ordering experience, allowing them to explore and order a variety of delicious items with real-time payments. This web app is fully responsive, ensuring an optimal user experience on all devices.
 
+## Demo
+
+You can access the live demo of Flavor Fusion by following this link: [Flavor Fusion](https://flavor-fusion-dex.vercel.app/)
+
 ## Table of Contents
 
 - [Features](#features)
