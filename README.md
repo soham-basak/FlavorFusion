@@ -11,9 +11,6 @@ Flavor Fusion is a full-stack web application built with Next.js, Prisma, Postgr
 - [Installation](#installation)
 - [Usage](#usage)
 - [Authentication](#authentication)
-- [Payment Processing](#payment-processing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
